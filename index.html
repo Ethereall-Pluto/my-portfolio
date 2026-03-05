@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olexander | Freelance Technical Specialist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Welcome Modal -->
+<div id="welcomeModal" class="modal">
+    <div class="modal-content">
+        <h2 id="welcome-title">Welcome</h2>
+        <p id="welcome-subtitle">Choose your preferences</p>
+        
+        <div class="preference-section">
+            <label id="theme-label">Theme:</label>
+            <div class="preference-buttons">
+                <button class="pref-btn" data-theme="dark" id="btn-dark">Dark</button>
+                <button class="pref-btn" data-theme="gray" id="btn-gray">Gray</button>
+                <button class="pref-btn" data-theme="light" id="btn-light">Light</button>
+            </div>
+        </div>
+
+        <div class="preference-section">
+            <label id="language-label">Language:</label>
+            <div class="preference-buttons">
+                <button class="pref-btn" data-lang="en" id="btn-en">English</button>
+                <button class="pref-btn" data-lang="uk" id="btn-uk">Українська</button>
+                <button class="pref-btn" data-lang="de" id="btn-de">Deutsch</button>
+            </div>
+        </div>
+
+        <button class="btn" id="confirm-btn">Continue</button>
+    </div>
+</div>
+
+<header>
+    <nav>
+        <h1>Olexander</h1>
+        <ul>
+            <li><a href="#about" data-translate="nav-about">About</a></li>
+            <li><a href="#skills" data-translate="nav-skills">Skills</a></li>
+            <li><a href="#services" data-translate="nav-services">Services</a></li>
+            <li><a href="#why" data-translate="nav-why">Why Choose Me</a></li>
+            <li><a href="#contact" data-translate="nav-contact">Contact</a></li>
+        </ul>
+        <div class="nav-controls">
+            <div class="theme-switcher">
+                <select id="theme-select">
+                    <option value="dark">Dark</option>
+                    <option value="gray">Gray</option>
+                    <option value="light">Light</option>
+                </select>
+            </div>
+            <div class="language-switcher">
+                <select id="language-select">
+                    <option value="en">English</option>
+                    <option value="uk">Українська</option>
+                    <option value="de">Deutsch</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-left animate-on-scroll">
+            <img src="unnamed.jpg" alt="Lego" class="profile">
+        </div>
+        <div class="hero-right animate-on-scroll">
+            <h2 data-translate="hero-title">Freelance Technical Specialist</h2>
+            <p data-translate="hero-subtitle">Python • C++ • Networking • 2D/3D AutoCAD</p>
+            <a href="#contact" class="btn" data-translate="btn-hire">Hire Me</a>
+        </div>
+    </div>
+</header>
+
+<section id="about" class="animate-on-scroll">
+    <h2 data-translate="about-title">About Me</h2>
+    <p data-translate="about-text">
+        I provide freelance services in software development, network configuration,
+        and CAD design. My focus is delivering efficient, reliable, and practical solutions.
+    </p>
+    <div class="profile">
+    <img src="photo.png" alt="Olexander">
+</div>
+</section>
+
+<section id="why">
+    <h2 data-translate="why-title">Why Choose Me</h2>
+    <ul>
+        <li data-translate="why-1">Fast and clear communication</li>
+        <li data-translate="why-2">Structured and documented solutions</li>
+        <li data-translate="why-3">Wide technical expertise</li>
+        <li data-translate="why-4">Focus on efficiency and quality</li>
+    </ul>
+</section>
+
+<section id="services" class="animate-on-scroll">
+    <h2 data-translate="services-title">Services</h2>
+    <div class="card">
+        <h3 data-translate="service-1-title">Automation & Scripts</h3>
+        <p data-translate="service-1-desc">Python bots, data parsers, automation tools for clients.</p>
+    </div>
+    <div class="card">
+        <h3 data-translate="service-2-title">Networking</h3>
+        <p data-translate="service-2-desc">Design and configuration of networks in Cisco Packet Tracer.</p>
+    </div>
+    <div class="card">
+        <h3 data-translate="service-3-title">CAD Design</h3>
+        <p data-translate="service-3-desc">2D technical drawings and 3D models with full documentation.</p>
+    </div>
+    <div class="card">
+        <h3 data-translate="service-4-title">Technical Consulting</h3>
+        <p data-translate="service-4-desc">Advice and solutions for technical and IT projects.</p>
+    </div>
+</section>
+
+<section id="showcase">
+    <img src="lego.png" alt="Lego project" class="showcase-img">
+</section>
+
+<section id="contact">
+    <h2 data-translate="contact-title">Contact</h2>
+    <p><span data-translate="contact-email">Email</span>: alexanderpokryschuk@gmail.com</p>
+    <p><span data-translate="contact-whatsapp">WhatsApp</span>: +380 99 461 327</p>
+    <p><span data-translate="contact-telegram">Telegram</span>: @WaSuper</p>
+    <p><span data-translate="contact-location">Location</span>: Germany</p>
+    <p><span data-translate="contact-status">Status</span>: <span data-translate="contact-available">Available for freelance projects</span></p>
+</section>
+
+<footer>
+    <p>© 2026 Olexander | <span data-translate="footer-text">Available for freelance projects</span></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

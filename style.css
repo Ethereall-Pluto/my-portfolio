@@ -1,0 +1,488 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Welcome Modal Styles */
+.modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: var(--bg-secondary);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 188, 212, 0.3);
+    max-width: 500px;
+    text-align: center;
+    border: 2px solid var(--accent-color);
+}
+
+.modal-content h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+.modal-content p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: var(--text-primary);
+}
+
+.preference-section {
+    margin-bottom: 25px;
+}
+
+.preference-section label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.preference-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pref-btn {
+    padding: 10px 20px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.pref-btn:hover {
+    background: var(--accent-color);
+    color: black;
+}
+
+.pref-btn.active {
+    background: var(--accent-color);
+    color: black;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
+}
+
+.modal-content .btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+}
+
+:root {
+    /* Dark theme (default) */
+    --bg-primary: #0f0f0f;
+    --bg-secondary: #1a1a1a;
+    --text-primary: white;
+    --accent-color: #00bcd4;
+    --accent-dark: #0097a7;
+}
+
+/* Gray theme */
+html[data-theme="gray"] {
+    --bg-primary: #2a2a2a;
+    --bg-secondary: #3a3a3a;
+    --text-primary: #e0e0e0;
+    --accent-color: #64b5f6;
+    --accent-dark: #1976d2;
+}
+
+html[data-theme="gray"] body {
+    background-image: 
+        radial-gradient(ellipse at 20% 50%, rgba(100, 181, 246, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(100, 181, 246, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 0%, rgba(100, 181, 246, 0.1) 0%, transparent 60%),
+        radial-gradient(ellipse at 100% 20%, rgba(100, 181, 246, 0.08) 0%, transparent 40%);
+}
+
+/* Light theme */
+html[data-theme="light"] {
+    --bg-primary: #f5f5f5;
+    --bg-secondary: #ffffff;
+    --text-primary: #333333;
+    --accent-color: #1976d2;
+    --accent-dark: #1565c0;
+}
+
+html[data-theme="light"] body {
+    background-image: 
+        radial-gradient(ellipse at 20% 50%, rgba(25, 118, 210, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(25, 118, 210, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 0%, rgba(25, 118, 210, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 100% 20%, rgba(25, 118, 210, 0.05) 0%, transparent 40%);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg-primary);
+    background-image: 
+        radial-gradient(ellipse at 20% 50%, rgba(0, 188, 212, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(0, 188, 212, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 0%, rgba(0, 188, 212, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 100% 20%, rgba(0, 188, 212, 0.06) 0%, transparent 40%);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10%;
+    background: var(--bg-secondary);
+    transition: background-color 0.3s;
+    gap: 20px;
+}
+
+nav h1 {
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    flex: none;
+    justify-content: center;
+}
+
+.theme-switcher,
+.language-switcher {
+    display: flex;
+    align-items: center;
+}
+
+.theme-switcher {
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+.language-switcher {
+    margin-left: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.3s;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    position: relative;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+    background: rgba(0, 188, 212, 0.1);
+    transform: translateY(-2px);
+}
+
+.nav-controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+#theme-select, #language-select {
+    padding: 10px 16px;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.2);
+    appearance: none;
+}
+
+#theme-select:hover, #language-select:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 188, 212, 0.6), inset 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+#theme-select:focus, #language-select:focus {
+    outline: none;
+    box-shadow: 0 6px 25px rgba(0, 188, 212, 0.8), inset 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+#theme-select option, #language-select option {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h2 {
+    font-size: 32px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, var(--accent-dark), var(--accent-color));
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0, 188, 212, 0.6), inset 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+section {
+    padding: 60px 10%;
+}
+
+/* larger text for the about section */
+#about p {
+    font-size: 20px;
+    line-height: 1.8;
+}
+h2 {
+    margin-bottom: 20px;
+    color: var(--accent-color);
+}
+
+.card {
+    background: var(--bg-secondary);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--bg-secondary);
+    margin-top: 40px;
+}
+
+.profile img {
+    display: block;
+    margin: 20px auto;
+    width: 768px;            /* ширина */
+    height: 512px;           /* квадрат */
+    border-radius: 10%;      /* круглая форма */
+    object-fit: cover;       /* обрезает лишнее, но выглядит аккуратно */
+    border: 3px solid var(--accent-color); /* рамка под стиль сайта */
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.5); /* лёгкая тень */
+}
+
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 10%;
+    gap: 40px;
+}
+
+.hero-left img.profile {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.5);
+}
+
+.hero-right h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.hero-right p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+
+#why ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+#why li {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* reusable animation helpers */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Showcase image under services */
+#showcase {
+    padding: 40px 10%;
+    background: var(--bg-secondary);
+    text-align: center;
+}
+
+.showcase-img {
+    max-width: 100%;
+    height: auto;
+    border: 5px solid var(--accent-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 5%;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    nav a {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+
+    .nav-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 40px 5%;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .hero-left img.profile {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero-right h2 {
+        font-size: 24px;
+    }
+
+    .hero-right p {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 40px 5%;
+    }
+
+    #about p {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .card {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .profile img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        aspect-ratio: 3/2;
+    }
+
+    #why li {
+        font-size: 16px;
+    }
+
+    .modal-content {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    .preference-buttons {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .pref-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    #showcase {
+        padding: 20px 5%;
+    }
+
+    footer {
+        padding: 15px 5%;
+        font-size: 14px;
+    }
+}
