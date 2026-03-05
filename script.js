@@ -292,3 +292,14 @@ cards.forEach(card => {
     card.style.transform = "translateY(20px)";
     card.style.transition = "all 0.5s ease";
 });
+
+// Contact form handler
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    const subject = `Contact from ${name}`;
+    const body = `From: ${name} (${email})\n\n${message}`;
+    window.location.href = `mailto:alexanderpokryschuk@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+});

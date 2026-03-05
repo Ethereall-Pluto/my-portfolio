@@ -308,6 +308,38 @@ footer {
     margin-top: 40px;
 }
 
+#contact a:hover {
+    color: var(--accent-dark);
+    text-decoration: underline;
+}
+
+#contact-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contact-form input, #contact-form textarea {
+    padding: 10px;
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+#contact-form input:focus, #contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-dark);
+}
+
+#contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
 .profile img {
     display: block;
     margin: 20px auto;
@@ -484,5 +516,14 @@ footer {
     footer {
         padding: 15px 5%;
         font-size: 14px;
+    }
+
+    #contact-form {
+        gap: 10px;
+    }
+
+    #contact-form input, #contact-form textarea {
+        font-size: 14px;
+        padding: 8px;
     }
 }

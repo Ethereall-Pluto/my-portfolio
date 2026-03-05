@@ -123,11 +123,18 @@
 
 <section id="contact">
     <h2 data-translate="contact-title">Contact</h2>
-    <p><span data-translate="contact-email">Email</span>: alexanderpokryschuk@gmail.com</p>
-    <p><span data-translate="contact-whatsapp">WhatsApp</span>: +380 99 461 327</p>
-    <p><span data-translate="contact-telegram">Telegram</span>: @WaSuper</p>
+    <p><span data-translate="contact-email">Email</span>: <a href="mailto:alexanderpokryschuk@gmail.com">alexanderpokryschuk@gmail.com</a></p>
+    <p><span data-translate="contact-whatsapp">WhatsApp</span>: <a href="https://wa.me/38099461327" target="_blank">+380 99 461 327</a></p>
+    <p><span data-translate="contact-telegram">Telegram</span>: <a href="https://t.me/WaSuper" target="_blank">@WaSuper</a></p>
     <p><span data-translate="contact-location">Location</span>: Germany</p>
     <p><span data-translate="contact-status">Status</span>: <span data-translate="contact-available">Available for freelance projects</span></p>
+    
+    <form id="contact-form">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+    </form>
 </section>
 
 <footer>
