@@ -620,18 +620,22 @@ nav ul a:hover {
 }
 
 .stat-number {
-    display: block;
+    display: inline-block; /* allow suffix to sit beside number */
     font-size: 1.8rem;
     font-weight: 800;
     color: var(--accent-color);
     line-height: 1;
     font-family: var(--font-display);
+    vertical-align: middle;
 }
 
 .stat-suffix {
     font-size: 1.4rem;
     font-weight: 800;
     color: var(--accent-color);
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 2px;
 }
 
 .stat-label {
