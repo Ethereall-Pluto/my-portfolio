@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Olexander | Freelance Technical Specialist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,6 +14,9 @@
 <!-- Welcome Modal -->
 <div id="welcomeModal" class="modal">
     <div class="modal-content">
+        <div class="modal-avatar">
+            <img src="unnamed.jpg" alt="Olexander avatar">
+        </div>
         <h2 id="welcome-title">Welcome</h2>
         <p id="welcome-subtitle">Choose your preferences</p>
         
@@ -36,109 +42,472 @@
     </div>
 </div>
 
+<!-- Navigation -->
 <header>
-    <nav>
-        <h1>Olexander</h1>
+    <nav id="main-nav">
+        <a href="#" class="nav-brand">
+            <span class="nav-brand-name">Olexander</span>
+            <span class="nav-brand-dot"></span>
+        </a>
         <ul>
             <li><a href="#about" data-translate="nav-about">About</a></li>
             <li><a href="#skills" data-translate="nav-skills">Skills</a></li>
             <li><a href="#services" data-translate="nav-services">Services</a></li>
-            <li><a href="#why" data-translate="nav-why">Why Choose Me</a></li>
+            <li><a href="#portfolio" data-translate="nav-portfolio">Portfolio</a></li>
+            <li><a href="#why" data-translate="nav-why">Why Me</a></li>
             <li><a href="#contact" data-translate="nav-contact">Contact</a></li>
         </ul>
         <div class="nav-controls">
             <div class="theme-switcher">
-                <select id="theme-select">
+                <select id="theme-select" aria-label="Select theme">
                     <option value="dark">Dark</option>
                     <option value="gray">Gray</option>
                     <option value="light">Light</option>
                 </select>
             </div>
             <div class="language-switcher">
-                <select id="language-select">
-                    <option value="en">English</option>
-                    <option value="uk">Українська</option>
-                    <option value="de">Deutsch</option>
+                <select id="language-select" aria-label="Select language">
+                    <option value="en">EN</option>
+                    <option value="uk">UA</option>
+                    <option value="de">DE</option>
                 </select>
             </div>
         </div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
 
+    <!-- Hero Section -->
     <div class="hero">
-        <div class="hero-left animate-on-scroll">
-            <img src="unnamed.jpg" alt="Lego" class="profile">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-blueprint"></div>
+
+        <div class="hero-content">
+            <div class="hero-left animate-on-scroll">
+                <div class="avatar-wrapper">
+                    <div class="avatar-ring"></div>
+                    <img src="unnamed.jpg" alt="Olexander – LEGO avatar" class="hero-avatar">
+                    <div class="avatar-status">
+                        <span class="status-dot"></span>
+                        <span data-translate="status-available">Available</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-right animate-on-scroll">
+                <div class="hero-eyebrow">
+                    <span class="eyebrow-line"></span>
+                    <span data-translate="hero-eyebrow">Freelance Specialist</span>
+                </div>
+                <h2 class="hero-headline" data-translate="hero-title">Freelance Technical Specialist</h2>
+                <p class="hero-tagline" data-translate="hero-subtitle">Python • C++ • Networking • 2D/3D AutoCAD</p>
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn btn-primary" data-translate="btn-hire">Hire Me</a>
+                    <a href="#portfolio" class="btn btn-ghost" data-translate="btn-work">See My Work</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-count="3">0</span>
+                        <span class="stat-label" data-translate="stat-years">Years Exp.</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="20">0</span><span class="stat-suffix">+</span>
+                        <span class="stat-label" data-translate="stat-projects">Projects</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="4">0</span>
+                        <span class="stat-label" data-translate="stat-skills">Core Skills</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="hero-right animate-on-scroll">
-            <h2 data-translate="hero-title">Freelance Technical Specialist</h2>
-            <p data-translate="hero-subtitle">Python • C++ • Networking • 2D/3D AutoCAD</p>
-            <a href="#contact" class="btn" data-translate="btn-hire">Hire Me</a>
+
+        <div class="hero-scroll-hint">
+            <span data-translate="scroll-hint">Scroll</span>
+            <div class="scroll-line"></div>
         </div>
     </div>
 </header>
 
-<section id="about" class="animate-on-scroll">
-    <h2 data-translate="about-title">About Me</h2>
-    <p data-translate="about-text">
-        I provide freelance services in software development, network configuration,
-        and CAD design. My focus is delivering efficient, reliable, and practical solutions.
-    </p>
-    <div class="profile">
-    <img src="photo.png" alt="Olexander">
-</div>
-</section>
-
-<section id="why">
-    <h2 data-translate="why-title">Why Choose Me</h2>
-    <ul>
-        <li data-translate="why-1">Fast and clear communication</li>
-        <li data-translate="why-2">Structured and documented solutions</li>
-        <li data-translate="why-3">Wide technical expertise</li>
-        <li data-translate="why-4">Focus on efficiency and quality</li>
-    </ul>
-</section>
-
-<section id="services" class="animate-on-scroll">
-    <h2 data-translate="services-title">Services</h2>
-    <div class="card">
-        <h3 data-translate="service-1-title">Automation & Scripts</h3>
-        <p data-translate="service-1-desc">Python bots, data parsers, automation tools for clients.</p>
-    </div>
-    <div class="card">
-        <h3 data-translate="service-2-title">Networking</h3>
-        <p data-translate="service-2-desc">Design and configuration of networks in Cisco Packet Tracer.</p>
-    </div>
-    <div class="card">
-        <h3 data-translate="service-3-title">CAD Design</h3>
-        <p data-translate="service-3-desc">2D technical drawings and 3D models with full documentation.</p>
-    </div>
-    <div class="card">
-        <h3 data-translate="service-4-title">Technical Consulting</h3>
-        <p data-translate="service-4-desc">Advice and solutions for technical and IT projects.</p>
+<!-- About Section -->
+<section id="about">
+    <div class="section-inner">
+        <div class="about-grid">
+            <div class="about-photo-col animate-on-scroll">
+                <div class="photo-frame">
+                    <img src="photo.png" alt="Olexander">
+                    <div class="photo-accent-bar"></div>
+                    <div class="photo-label">
+                        <span class="mono-text">olexander.dev</span>
+                        <span class="mono-text location-tag">📍 Germany</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-text-col animate-on-scroll">
+                <div class="section-label" data-translate="about-label">// about_me</div>
+                <h2 data-translate="about-title">About Me</h2>
+                <p data-translate="about-text">
+                    I provide freelance services in software development, network configuration,
+                    and CAD design. My focus is delivering efficient, reliable, and practical solutions.
+                </p>
+                <p data-translate="about-text-2">
+                    Based in Germany, I work with clients internationally — bridging technical precision with clear communication across languages and disciplines.
+                </p>
+                <div class="about-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">C++</span>
+                    <span class="tag">Cisco</span>
+                    <span class="tag">AutoCAD</span>
+                    <span class="tag">Networking</span>
+                    <span class="tag">Automation</span>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
+<!-- Skills Section -->
+<section id="skills">
+    <div class="section-inner">
+        <div class="section-label" data-translate="skills-label">// tech_stack</div>
+        <h2 data-translate="skills-title">Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category animate-on-scroll">
+                <div class="skill-cat-icon">⚙️</div>
+                <h3 data-translate="skill-cat-dev">Development</h3>
+                <div class="skill-bars">
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-label"><span>Python</span><span class="skill-pct">90%</span></div>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-label"><span>C++</span><span class="skill-pct">75%</span></div>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-label"><span>Bash / Scripting</span><span class="skill-pct">80%</span></div>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category animate-on-scroll">
+                <div class="skill-cat-icon">🌐</div>
+                <h3 data-translate="skill-cat-net">Networking</h3>
+                <div class="skill-bars">
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-label"><span>Cisco Packet Tracer</span><span class="skill-pct">85%</span></div>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-label"><span>TCP/IP, VLANs</span><span class="skill-pct">80%</span></div>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-label"><span>Network Design</span><span class="skill-pct">82%</span></div>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="82"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category animate-on-scroll">
+                <div class="skill-cat-icon">📐</div>
+                <h3 data-translate="skill-cat-cad">CAD Design</h3>
+                <div class="skill-bars">
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-label"><span>AutoCAD 2D</span><span class="skill-pct">88%</span></div>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-label"><span>AutoCAD 3D</span><span class="skill-pct">72%</span></div>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="72"></div></div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-bar-label"><span>Technical Docs</span><span class="skill-pct">85%</span></div>
+                        <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services">
+    <div class="section-inner">
+        <div class="section-label" data-translate="services-label">// what_i_do</div>
+        <h2 data-translate="services-title">Services</h2>
+        <div class="services-grid">
+            <div class="service-card animate-on-scroll" data-index="1">
+                <div class="service-number">01</div>
+                <div class="service-icon">🤖</div>
+                <h3 data-translate="service-1-title">Automation & Scripts</h3>
+                <p data-translate="service-1-desc">Python bots, data parsers, automation tools for clients.</p>
+                <div class="service-tags">
+                    <span>Python</span><span>Bots</span><span>Parsers</span>
+                </div>
+            </div>
+            <div class="service-card animate-on-scroll" data-index="2">
+                <div class="service-number">02</div>
+                <div class="service-icon">🌐</div>
+                <h3 data-translate="service-2-title">Networking</h3>
+                <p data-translate="service-2-desc">Design and configuration of networks in Cisco Packet Tracer.</p>
+                <div class="service-tags">
+                    <span>Cisco</span><span>VLAN</span><span>TCP/IP</span>
+                </div>
+            </div>
+            <div class="service-card animate-on-scroll" data-index="3">
+                <div class="service-number">03</div>
+                <div class="service-icon">📐</div>
+                <h3 data-translate="service-3-title">CAD Design</h3>
+                <p data-translate="service-3-desc">2D technical drawings and 3D models with full documentation.</p>
+                <div class="service-tags">
+                    <span>AutoCAD</span><span>2D</span><span>3D</span>
+                </div>
+            </div>
+            <div class="service-card animate-on-scroll" data-index="4">
+                <div class="service-number">04</div>
+                <div class="service-icon">💡</div>
+                <h3 data-translate="service-4-title">Technical Consulting</h3>
+                <p data-translate="service-4-desc">Advice and solutions for technical and IT projects.</p>
+                <div class="service-tags">
+                    <span>IT</span><span>Analysis</span><span>Strategy</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio / Case Studies Section -->
+<section id="portfolio">
+    <div class="section-inner">
+        <div class="section-label" data-translate="portfolio-label">// case_studies</div>
+        <h2 data-translate="portfolio-title">Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="project-card animate-on-scroll" data-index="1">
+                <div class="project-img-wrap">
+                    <div class="project-img-placeholder project-img-1">
+                        <span class="project-img-icon">🤖</span>
+                    </div>
+                    <div class="project-overlay">
+                        <a href="#contact" class="btn btn-sm" data-translate="btn-view">View Project</a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span class="ptag">Python</span>
+                        <span class="ptag">Telegram API</span>
+                        <span class="ptag">Automation</span>
+                    </div>
+                    <h3 data-translate="project-1-title">Telegram Automation Bot</h3>
+                    <p data-translate="project-1-desc">A multi-feature Telegram bot for client automation — scheduling messages, parsing data feeds, and generating daily reports.</p>
+                </div>
+            </div>
+
+            <div class="project-card animate-on-scroll" data-index="2">
+                <div class="project-img-wrap">
+                    <div class="project-img-placeholder project-img-2">
+                        <span class="project-img-icon">🌐</span>
+                    </div>
+                    <div class="project-overlay">
+                        <a href="#contact" class="btn btn-sm" data-translate="btn-view">View Project</a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span class="ptag">Cisco</span>
+                        <span class="ptag">VLAN</span>
+                        <span class="ptag">Routing</span>
+                    </div>
+                    <h3 data-translate="project-2-title">Enterprise Network Design</h3>
+                    <p data-translate="project-2-desc">Full network topology for a mid-size company: VLAN segmentation, inter-VLAN routing, DHCP, ACLs — all configured in Cisco Packet Tracer.</p>
+                </div>
+            </div>
+
+            <div class="project-card animate-on-scroll" data-index="3">
+                <div class="project-img-wrap">
+                    <div class="project-img-placeholder project-img-3">
+                        <span class="project-img-icon">📐</span>
+                    </div>
+                    <div class="project-overlay">
+                        <a href="#contact" class="btn btn-sm" data-translate="btn-view">View Project</a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span class="ptag">AutoCAD</span>
+                        <span class="ptag">3D</span>
+                        <span class="ptag">Documentation</span>
+                    </div>
+                    <h3 data-translate="project-3-title">Mechanical Parts – 3D Models</h3>
+                    <p data-translate="project-3-desc">Set of 3D AutoCAD models for industrial mechanical parts with full technical documentation, dimensions, tolerances, and assembly drawings.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Showcase / LEGO Image -->
 <section id="showcase">
-    <img src="lego.png" alt="Lego project" class="showcase-img">
+    <div class="showcase-inner">
+        <img src="lego.png" alt="Olexander's workspace" class="showcase-img">
+        <div class="showcase-caption">
+            <span class="mono-text" data-translate="showcase-caption">// my_workspace.png</span>
+        </div>
+    </div>
 </section>
 
+<!-- Why Choose Me -->
+<section id="why">
+    <div class="section-inner">
+        <div class="section-label" data-translate="why-label">// why_me</div>
+        <h2 data-translate="why-title">Why Choose Me</h2>
+        <div class="why-grid">
+            <div class="why-card animate-on-scroll">
+                <div class="why-icon">⚡</div>
+                <h3 data-translate="why-1-title">Fast Communication</h3>
+                <p data-translate="why-1">Fast and clear communication — you always know where your project stands.</p>
+            </div>
+            <div class="why-card animate-on-scroll">
+                <div class="why-icon">📋</div>
+                <h3 data-translate="why-2-title">Documented Solutions</h3>
+                <p data-translate="why-2">Structured and documented solutions delivered clean and maintainable.</p>
+            </div>
+            <div class="why-card animate-on-scroll">
+                <div class="why-icon">🛠</div>
+                <h3 data-translate="why-3-title">Wide Expertise</h3>
+                <p data-translate="why-3">Wide technical expertise spanning code, networks, and mechanical design.</p>
+            </div>
+            <div class="why-card animate-on-scroll">
+                <div class="why-icon">🎯</div>
+                <h3 data-translate="why-4-title">Quality Focus</h3>
+                <p data-translate="why-4">Focus on efficiency and quality — no bloat, just results.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials">
+    <div class="section-inner">
+        <div class="section-label" data-translate="testimonials-label">// client_feedback</div>
+        <h2 data-translate="testimonials-title">Testimonials</h2>
+        <div class="testimonials-track">
+            <div class="testimonial-card animate-on-scroll">
+                <div class="testimonial-quote">"</div>
+                <p data-translate="testimonial-1">"Olexander delivered the Python automation tool ahead of schedule. Clear documentation and fast replies throughout the entire project."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">AM</div>
+                    <div>
+                        <strong>A. Müller</strong>
+                        <span data-translate="testimonial-1-role">IT Manager, Germany</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card animate-on-scroll">
+                <div class="testimonial-quote">"</div>
+                <p data-translate="testimonial-2">"The network design was exactly what we needed — structured, well-documented, and easy to hand off to our team. Highly recommended."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SK</div>
+                    <div>
+                        <strong>S. Koval</strong>
+                        <span data-translate="testimonial-2-role">Startup Founder, Ukraine</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card animate-on-scroll">
+                <div class="testimonial-quote">"</div>
+                <p data-translate="testimonial-3">"Great CAD work — professional drawings with proper dimensions and full documentation. Would work with Olexander again."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JP</div>
+                    <div>
+                        <strong>J. Patel</strong>
+                        <span data-translate="testimonial-3-role">Engineer, Netherlands</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
 <section id="contact">
-    <h2 data-translate="contact-title">Contact</h2>
-    <p><span data-translate="contact-email">Email</span>: <a href="mailto:alexanderpokryschuk@gmail.com">alexanderpokryschuk@gmail.com</a></p>
-    <p><span data-translate="contact-whatsapp">WhatsApp</span>: <a href="https://wa.me/38099461327" target="_blank">+380 99 461 327</a></p>
-    <p><span data-translate="contact-telegram">Telegram</span>: <a href="https://t.me/WaSuper" target="_blank">@WaSuper</a></p>
-    <p><span data-translate="contact-location">Location</span>: Germany</p>
-    <p><span data-translate="contact-status">Status</span>: <span data-translate="contact-available">Available for freelance projects</span></p>
-    
-    <form id="contact-form">
-        <input type="text" id="name" placeholder="Your Name" required>
-        <input type="email" id="email" placeholder="Your Email" required>
-        <textarea id="message" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn">Send Message</button>
-    </form>
+    <div class="section-inner">
+        <div class="contact-grid">
+            <div class="contact-info animate-on-scroll">
+                <div class="section-label" data-translate="contact-label">// get_in_touch</div>
+                <h2 data-translate="contact-title">Contact</h2>
+                <p data-translate="contact-intro">Ready to start a project? Reach out through any channel below.</p>
+                <div class="contact-links">
+                    <a href="mailto:alexanderpokryschuk@gmail.com" class="contact-link">
+                        <span class="contact-link-icon">✉</span>
+                        <div>
+                            <span class="contact-link-label" data-translate="contact-email">Email</span>
+                            <span class="contact-link-value">alexanderpokryschuk@gmail.com</span>
+                        </div>
+                    </a>
+                    <a href="https://wa.me/38099461327" target="_blank" class="contact-link">
+                        <span class="contact-link-icon">💬</span>
+                        <div>
+                            <span class="contact-link-label" data-translate="contact-whatsapp">WhatsApp</span>
+                            <span class="contact-link-value">+380 99 461 327</span>
+                        </div>
+                    </a>
+                    <a href="https://t.me/WaSuper" target="_blank" class="contact-link">
+                        <span class="contact-link-icon">✈</span>
+                        <div>
+                            <span class="contact-link-label" data-translate="contact-telegram">Telegram</span>
+                            <span class="contact-link-value">@WaSuper</span>
+                        </div>
+                    </a>
+                    <div class="contact-link no-link">
+                        <span class="contact-link-icon">📍</span>
+                        <div>
+                            <span class="contact-link-label" data-translate="contact-location">Location</span>
+                            <span class="contact-link-value">Germany</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="availability-badge">
+                    <span class="status-dot"></span>
+                    <span data-translate="contact-available">Available for freelance projects</span>
+                </div>
+            </div>
+
+            <div class="contact-form-col animate-on-scroll">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name" data-translate="form-name-label">Name</label>
+                        <input type="text" id="name" data-translate-placeholder="form-name-ph" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-translate="form-email-label">Email</label>
+                        <input type="email" id="email" data-translate-placeholder="form-email-ph" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-translate="form-message-label">Message</label>
+                        <textarea id="message" data-translate-placeholder="form-message-ph" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" data-translate="form-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </section>
 
 <footer>
-    <p>© 2026 Olexander | <span data-translate="footer-text">Available for freelance projects</span></p>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <span class="nav-brand-name">Olexander</span>
+        </div>
+        <p class="footer-copy">© 2026 Olexander | <span data-translate="footer-text">Available for freelance projects</span></p>
+        <div class="footer-links">
+            <a href="mailto:alexanderpokryschuk@gmail.com">Email</a>
+            <a href="https://t.me/WaSuper" target="_blank">Telegram</a>
+            <a href="https://wa.me/38099461327" target="_blank">WhatsApp</a>
+        </div>
+    </div>
 </footer>
 
 <script src="script.js"></script>
